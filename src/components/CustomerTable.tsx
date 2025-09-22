@@ -43,7 +43,9 @@ export const CustomerTable = ({ onAddCustomer, onAddBulkCustomers, onEditCustome
       const { data, error } = await supabase
         .from('customers')
         .select('*')
-        .order('id', { ascending: true });
+        .order('line_type', { ascending: true })
+        .order('customer_name', { ascending: true })
+        .order('charging_date', { ascending: true });
 
       if (error) throw error;
       setCustomers(data || []);
@@ -199,7 +201,7 @@ export const CustomerTable = ({ onAddCustomer, onAddBulkCustomers, onEditCustome
                 className="hover:bg-muted/50 transition-colors animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <TableCell className="font-medium">{customer.id}</TableCell>
+                <TableCell className="font-medium">{index + 1}</TableCell>
                 <TableCell>{customer.customer_name || 'غير محدد'}</TableCell>
                 <TableCell>
                   <div className="flex items-center gap-2">
