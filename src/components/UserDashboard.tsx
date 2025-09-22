@@ -164,21 +164,9 @@ export const UserDashboard = ({ userType, username }: UserDashboardProps) => {
                 </div>
                 
                 <div className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4 text-muted-foreground" />
-                  <span className="font-medium">وقت الوصول:</span>
-                  <span className="text-indigo-600 font-semibold">{customer.arrival_time ? formatDate(customer.arrival_time) : 'غير محدد'}</span>
-                </div>
-                
-                <div className="flex items-center gap-2">
                   <Wifi className="h-4 w-4 text-muted-foreground" />
                   <span className="font-medium">مزود الخدمة:</span>
                   <Badge variant="outline" className="bg-blue-100 text-blue-700 border-blue-300 capitalize">{customer.provider || 'غير محدد'}</Badge>
-                </div>
-                
-                <div className="flex items-center gap-2">
-                  <Phone className="h-4 w-4 text-muted-foreground" />
-                  <span className="font-medium">ملكية الخط:</span>
-                  <Badge variant="secondary" className="capitalize">{customer.ownership || 'غير محدد'}</Badge>
                 </div>
                 
                 <div className="flex items-center gap-2">
